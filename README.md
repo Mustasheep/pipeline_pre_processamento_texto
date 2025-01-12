@@ -1,4 +1,4 @@
-# Pré Processamento de Texto
+# Pré-Processamento de Texto para PLN
 
 Com este projeto, podemos:
 
