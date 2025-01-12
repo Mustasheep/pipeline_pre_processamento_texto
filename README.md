@@ -10,8 +10,6 @@ Com este repositório, podemos:
 
 - Implementar funções para tokenizar o texto em palavras e frases.
 
-- Implementar uma função para converter o texto para minúsculas.
-
 - Implementar uma função para remover stop words.
 
 - Implementar funções para aplicar stemming e lematização.
