@@ -1,6 +1,6 @@
 # Pré-Processamento de Texto para PLN
 
-Com este projeto, podemos:
+Com este repositório, podemos:
 
 - Importar as bibliotecas necessárias para o pré-processamento de texto como `NLTK`.
 
