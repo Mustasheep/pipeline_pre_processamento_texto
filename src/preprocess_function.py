@@ -1,9 +1,9 @@
 import re
 import nltk
+from unidecode import unidecode
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.corpus import stopwords
-import nltk
 from nltk.stem import RSLPStemmer
 import spacy
 
@@ -16,6 +16,7 @@ nltk.download('rslp')
 # Pré-processamento de textos em português
 def pre_processamento_texto(texto, stemming=False):
     texto = re.sub(r'<.*?>', '', texto) # Remove tags HTML
+    texto = unidecode(texto) # Remove acentuação preservando a letra
     texto = re.sub(r'[^a-zA-Z0-9\s]', '', texto) # Remove caracteres especiais
     texto = re.sub(r'http\S+', '', texto) # Remove URLs
     texto = re.sub(r'\s+', ' ', texto) # Remove espaços em branco extras
