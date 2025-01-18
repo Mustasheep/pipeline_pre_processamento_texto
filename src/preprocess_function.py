@@ -34,7 +34,7 @@ def pre_processamento_texto(texto, stemming=False):
         nlp = spacy.load('pt_core_news_sm')
         tokens_lematizados = [token.lemma_ for token in nlp(' '.join(tokens))]
 
-    return tokens_lematizados
+    return " ".join(tokens_lematizados)
 
 # Pré-processamento de textos em inglês
 def text_preprocessing(texto, stemming=False):
