@@ -14,6 +14,7 @@ nltk.download('stopwords')
 nltk.download('rslp')
 
 # Pré-processamento de textos em português
+nlp = spacy.load('pt_core_news_sm')
 def pre_processamento_texto(texto, stemming=False):
     texto = re.sub(r'<.*?>', '', texto) # Remove tags HTML
     texto = unidecode(texto) # Remove acentuação preservando a letra
@@ -29,12 +30,11 @@ def pre_processamento_texto(texto, stemming=False):
     
     if stemming:
         stemmer = RSLPStemmer()
-        tokens = [stemmer.stem(token) for token in tokens]
+        tokens_sl = [stemmer.stem(token) for token in tokens]
     else:
-        nlp = spacy.load('pt_core_news_sm')
-        tokens_lematizados = [token.lemma_ for token in nlp(' '.join(tokens))]
+        tokens_sl = [token.lemma_ for token in nlp(' '.join(tokens))]
 
-    return " ".join(tokens_lematizados)
+    return " ".join(tokens_sl)
 
 # Pré-processamento de textos em inglês
 def text_preprocessing(texto, stemming=False):
@@ -51,9 +51,9 @@ def text_preprocessing(texto, stemming=False):
     
     if stemming:
         stemmer = PorterStemmer()
-        tokens_lemm = [stemmer.stem(token) for token in tokens]
+        tokens_sl = [stemmer.stem(token) for token in tokens]
     else:
         lemmatizer = WordNetLemmatizer()
-        tokens_lemm = [lemmatizer.lemmatize(token) for token in tokens]
+        tokens_sl = [lemmatizer.lemmatize(token) for token in tokens]
 
-    return " ".join(tokens_lemm)
+    return " ".join(tokens_sl)
